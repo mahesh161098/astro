@@ -1,0 +1,99 @@
+---
+import { date } from "astro:schema";
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GlassCard from "../components/GlassCard.astro";
+
+
+const statsData = {
+	data:[
+		{
+			isPictureCard:false,
+			count:"250",
+			trailingSymbol:"+",
+			title:"Certifications"
+		},
+		{
+			isPictureCard:false,
+			count:"30",
+			trailingSymbol:"%",
+			title:"Certified Professionals"
+		},
+		{
+			isPictureCard:false,
+			count:"8",
+			trailingSymbol:"+",
+			title:"Years Avg Experience"
+		},
+		{
+			isPictureCard:false,
+			count:"20",
+			trailingSymbol:"+",
+			title:"Projects Delivered"
+		},
+		{
+			isPictureCard:true,
+			pictureCard:{
+				pictureSrc:"/images/value_delivered_certified_professionals.webp",
+				title:"Certified Professionals",
+				description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consectetur, odio sed pellentesque semper, risus risus pellentesque mauris, non vestibulum purus libero eget mauris. "
+			}
+		},
+		{
+			isPictureCard:false,
+			count:"8",
+			trailingSymbol:"+",
+			title:"Industries Served"
+		},
+	]
+}
+---
+
+<BaseLayout pageTitle={"Data & AI Practices"}>
+	<section class="section cp-section" style="background-image: url(/images/value_add_bg.webp);">
+		<div class="container">
+			<SectionHeading sectionHeading = {"Our Data & AI Practice"} textColor = {'white'}/>
+			<div class="stats-cards-wrapper">
+				{
+					statsData.data.map((data)=>(
+					
+					<GlassCard data={data} />
+					))
+				}
+				
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+<style>
+	body{
+		/* background-color: #090611; */
+		
+	}
+	.container{
+		padding:0 65px;
+	}
+	
+	.cp-section{
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding-top: 120px;
+		padding-bottom: 120px;
+		
+	}
+	.stats-cards-wrapper{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows:repeat(3,318px);
+		gap:30px;
+	}
+	
+	
+	@media screen and (max-width:1599px) {
+		.stats-cards-wrapper{
+			grid-template-rows: repeat(3,240px);
+			gap:20px;
+		}
+	}
+</style>

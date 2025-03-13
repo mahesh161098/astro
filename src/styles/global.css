@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    font-family: "Inter",sans-serif;
+    font-size:16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+section{
+    flex-grow: 1;
+}
+.container{
+    width:100%;
+    max-width: 1716px;
+    padding:0 15px;
+    margin:0 auto;
+}
+h1,h2,h3,p{
+    margin-bottom: 0;
+    margin-top: 0;
+}

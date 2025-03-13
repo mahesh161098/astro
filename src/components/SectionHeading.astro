@@ -1,0 +1,17 @@
+---
+const {sectionHeading} = Astro.props;
+const {textColor} = Astro.props;
+---
+<div class="section-heading" >
+    <h1>{sectionHeading}</h1>
+</div>
+
+<style define:vars={{textColor}}>
+    h1{
+        font-size:3.75rem;
+        font-weight: 400;
+        color:var(--textColor);
+        margin-bottom:80px;
+    }
+</style>
+
